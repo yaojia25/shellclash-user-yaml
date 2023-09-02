@@ -5,7 +5,7 @@ on:
     - cron: "0 19 * * *"
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - "README.md"
       - ".github/workflows/delete-old-workflows.yml"
@@ -24,7 +24,7 @@ jobs:
           tag_name: latest
           github_token: ${{ secrets.GITHUB_TOKEN }}
           delete_release: true
-          repo: yaojia25/shellclash-user-config
+          repo: yaojia25/shellclash-user-yaml
 
       - name: Setup Go
         uses: actions/setup-go@v4
@@ -112,7 +112,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b release
           git add .
-          git commit -m "${{ env.RELEASE_NAME }}"
+          git commit -m "update fake-ip-user.yaml"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u origin release
 
