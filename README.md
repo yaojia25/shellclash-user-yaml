@@ -16,7 +16,7 @@
 - 注：以 geosite.dat 为例
 
 ```
-curl -o $clashdir/yamls/user.yaml -L https://cdn.jsdelivr.net/gh/yaojia25/shellclash-user-config@release/fake-ip-user.yaml
+curl -o $clashdir/yamls/user.yaml -L https://cdn.jsdelivr.net/gh/yaojia25/shellclash-user-yaml@release/fake-ip-user.yaml
 $clashdir/start.sh restart
 ```
 ## 2. DNS 模式为 redir-host
