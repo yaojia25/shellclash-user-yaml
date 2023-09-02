@@ -22,7 +22,7 @@ jobs:
       - uses: dev-drprasad/delete-tag-and-release@v1.0
         with:
           tag_name: latest
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
           delete_release: true
           repo: yaojia25/shellclash-user-yaml
 
@@ -98,7 +98,7 @@ jobs:
       - name: Release and upload assets
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.MY_GITHUB_TOKEN }}
           release_name: latest
           tag: latest
           file_glob: true
@@ -113,7 +113,7 @@ jobs:
           git checkout -b release
           git add .
           git commit -m "update fake-ip-user.yaml"
-          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git remote add origin "https://${{ github.actor }}:${{ secrets.MY_GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u origin release
 
       - name: Purge jsdelivr CDN
